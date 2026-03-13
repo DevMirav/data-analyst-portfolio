@@ -1,0 +1,346 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+  body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* prevent horizontal scrolling */
+  overflow-y: auto;    /* allow vertical scrolling */
+  background: white;
+  color: black;
+}
+.hero {
+  background: linear-gradient(to right, #012144, #06273d);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+ }
+ .hero h1 {
+  font-size: 2.3rem;
+  margin-top: 15px;
+}
+.hero h3 {
+  font-weight: 400;
+  margin-top: 8px; 
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #F4B400;
+}
+.tagline {
+  margin-bottom: 25px;
+}
+.hero-buttons .btn {
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+} 
+.primary {
+  background: #F4B400;
+  color: #002B5B;
+}
+.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.scroll-down {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+.intro-banner {
+  font-weight: 500;
+  background-color: #fafafa;
+  color: #002B5B;
+  text-align: center;
+  padding: 40px;
+  margin: -30px auto 40px;                                       
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+  position: relative;
+  z-index: 10;
+}
+.about {
+  background-color: #fafafa;
+  color: #444;
+  font-family: 'Times New Roman', Times, serif;        
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);             ;
+}
+.about h2 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #005087;
+  text-align: center;
+}
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.projects {
+  background-color: #fafafa;
+  color: #444;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 60px 20px;
+  max-width: 100%;
+  margin: 60px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0,0.15);
+}
+.project-intro {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #555;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* PROJECT GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  align-items: stretch; /* ensures cards stretch to same height */
+  margin-top: 30px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes link to bottom */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  overflow: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  height: auto; /* ensures uniform height */
+}
+
+/* CARD HOVER */
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.project-card img {
+  max-width: 100%;
+  height: auto; /* fixed height for all cards */
+  object-fit: cover; /* crops image nicely without distortion */
+  border-bottom: 3px solid #F4B400;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* CARD TITLE & TEXT */
+.project-card h4 {
+  font-size: 1.1rem;
+  color: #002B5B;
+  margin: 10px 0 8px 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.project-card p {
+  font-size: 0.97rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: justify;
+
+  /* limit to 5 lines for uniformity */
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* LINK BUTTON */
+.card-link {
+  display: block;         /* makes it respect margin auto */
+  width: 180px;           /* your fixed width */
+  margin: 10px auto 0 auto; /* top margin 10px, auto left & right to center */
+  background: transparent;
+  border: 2px solid #002B5B;
+  color: #005087;
+  padding: 4px 0;         /* small padding for neat size */
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;     /* ensures text is centered inside button */
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.card-link:hover {
+  background-color: #002B5B;
+  color: solid white;
+  text-decoration: none;
+}
+
+/* RESPONSIVE GRID */
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.skills-grid div {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.bar {
+  max-width: 100%;
+  background: #eee;
+  border-radius: 20px;
+  height: auto;
+  margin: 5px 5px;
+}
+.fill {
+  height: 10px;
+  background: #F4B400;
+  border-radius: 20px;
+  width: 0;
+  transition: width 1s ease;
+}
+.fill-80 { width: 70%; }
+.fill-70 { width: 75%; }
+.fill-75 { width: 80%; }
+.fill-85 { width: 85%; }
+
+.testimonial {
+  padding: 60px 20px;
+  margin: 60px auto;
+  text-align: center;
+}
+blockquote {
+  font-style: italic;
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: #f1f1f1;
+  border-left: 5px solid #002B5B;
+}
+.contact {
+padding: 60px 20px;
+background-color: #fafafa;
+color: #002B5B; font-size: 1.5rem;
+}
+.contact h2 {
+  text-align: center;      /* centers the text horizontally */
+  color: #002B5B;          /* keeps your theme color */
+  font-size: 1.5rem;
+  margin-bottom: 30px;     /* space below the heading */
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+input, textarea {
+  padding: 0.8rem;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+button {
+  background-color: #002B5B;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005087;
+}
+footer {
+margin-top: 20px;
+  text-align: center;
+  color: #002B5B;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .about,
+  .projects {
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero h3 {
+    font-size: 1rem;
+  }
+
+  .intro-banner {
+    font-size: 1rem;
+    padding: 25px;
+  }
+
+  .about p,
+  .project-card p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .testimonial {
+    margin: 40px 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero h3 {
+    font-size: 0.95rem;
+    }
+    }
